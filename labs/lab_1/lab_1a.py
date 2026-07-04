@@ -11,6 +11,7 @@ def main():
     name = "Gavin Zhao" # TODO: Insert your name between the double quotes
 
     print(f"{name}, Welcome to the CSS course!")
+    print("Downloaded github desktop, installed macports, created github account, pushed first commit, doing second commit")
 
 if __name__ == "__main__":
     main()
