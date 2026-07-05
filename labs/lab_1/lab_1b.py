@@ -36,17 +36,42 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             raise ValueError("Cannot divide by zero.")
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+    
+def request_good_number(prompt: str) -> float:
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid Input, enter another number ")
+
+def request_good_operation(prompt: str):
+    while True:
+        operation = str(input(prompt))
+        if operation == "add":
+            return operation
+        elif operation == "subtract":
+            return operation
+        elif operation == "divide":
+            return operation
+        elif operation == "multiply":
+            return operation
+        else:
+            print("Invalid input please try again")
 
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    # num1 = (input("Enter the first number: "))
+    # num2 = (input("Enter the second number: "))
+    num1 = request_good_number("Enter Number 1 ")
+    num2 = request_good_number("Enter Number 2 ")
+    operation = request_good_operation("Please enter a operation ")
+    # operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
-    # Perform the calculation and display the result
+    
     result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
