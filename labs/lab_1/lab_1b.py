@@ -45,6 +45,20 @@ def request_good_number(prompt: str) -> float:
         except ValueError:
             print("Invalid Input, enter another number ")
 
+def request_good_operation(prompt: str):
+    while True:
+        operation = str(input(prompt))
+        if operation == "add":
+            return operation
+        elif operation == "subtract":
+            return operation
+        elif operation == "divide":
+            return operation
+        elif operation == "multiply":
+            return operation
+        else:
+            print("Invalid input please try again")
+
 def main():
     
     print(f"===== Simple Calculator =====")
@@ -54,7 +68,8 @@ def main():
     # num2 = (input("Enter the second number: "))
     num1 = request_good_number("Enter Number 1 ")
     num2 = request_good_number("Enter Number 2 ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = request_good_operation("Please enter a operation ")
+    # operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     
     result = simple_calculator(operation, num1, num2)
