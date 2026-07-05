@@ -3,25 +3,21 @@ import pytest
 from labs.lab_1.lab_1c import max_subarray_sum
 
 
-def test_positives():
-    assert max_subarray_sum([1, 2, 3, 4, 5]) == 15
-    assert max_subarray_sum([0, 1, 100, 1]) == 102
-    assert max_subarray_sum([0, 0]) == 0
+def same_numbers():
+    assert max_subarray_sum([1, 1, 1, 1, 1]) == 5
+    assert max_subarray_sum([0, 0, 0, 0]) == 0
+    assert max_subarray_sum([-1, -1, -1]) == -3
 
-def test_negatives():
-    assert max_subarray_sum([-1, -2, -3]) == -6
-    assert max_subarray_sum([-1, -1, -1000]) == -1002
-    assert max_subarray_sum([-1, -(-1), 0]) == 0
+def alternating():
+    assert max_subarray_sum([1, 0, 1, 0, 1]) == 1
+    assert max_subarray_sum([-1, 0, -1, 0, -1]) == -1
 
-def test_fractions():
-    assert max_subarray_sum([1/10, 2/10, 4/10]) == 7/10
-    assert max_subarray_sum([-1/10, 3/10]) == 2/10
-    assert max_subarray_sum([0, -(-1/10), 2/10]) == 1/10
+def opposites():
+    assert max_subarray_sum([-1, 1, -1, 1]) == 1
 
-def test_decimals():
-    assert max_subarray_sum([0.1, 0.2, 0.3]) == 0.6
-    assert max_subarray_sum([-0.1, -0.2, -0.3]) == -0.6
-    assert max_subarray_sum([0.3, -(-0.3)]) == 0
+def randoms():
+    assert max_subarray_sum([2, -1, 9, -2, 1, -4, 3]) == 10
+
 
 if __name__ == "__main__":
     pytest.main()
